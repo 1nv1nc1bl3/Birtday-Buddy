@@ -1,22 +1,30 @@
-import data from '../data';
+import { useState } from 'react';
 
-function Person() {
+export default function Person({ image, age, firstName, lastName, id }) {
+    const [isRemoved, setIsRemoved] = useState(false);
+
+    const removeSingle = () => {
+        // console.log(id);
+        // console.log(isRemoved);
+        setIsRemoved(true);
+    };
+
     return (
-        <div>
-            {data.map((item) => {
-                const { id, name, age, image } = item;
-                return (
-                    <article className='person' key={id}>
-                        <img src={image} alt={name} />
-                        <div>
-                            <h4>{name}</h4>
-                            <p>{age} years</p>
-                        </div>
-                    </article>
-                );
-            })}
-        </div>
+        <article className={`person ${isRemoved ? 'removed' : ''}`} key={id}>
+            <div className='personData'>
+                <img src={image} alt={firstName} />
+                <div>
+                    <h4>
+                        {firstName} {lastName}
+                    </h4>
+                    <p>{age} years</p>
+                </div>
+            </div>
+            <div className='personBtn'>
+                <button type='button' className='btn' onClick={removeSingle}>
+                    mark {firstName} as called
+                </button>
+            </div>
+        </article>
     );
 }
-
-export default Person;

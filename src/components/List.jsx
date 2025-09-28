@@ -1,11 +1,11 @@
 import Person from './Person';
 
-function List() {
+export default function List({ people }) {
     return (
         <section>
-            <Person />
+            {people.map((person) => {
+                return <Person key={person.id} {...person} />;
+            })}
         </section>
     );
 }
-
-export default List;
