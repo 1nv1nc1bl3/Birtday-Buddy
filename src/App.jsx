@@ -15,7 +15,9 @@ export default function App() {
                     className='num-friends'
                     style={{ marginBottom: '2rem', marginTop: '.5rem' }}
                 >
-                    {people.length} of your contacts have a birthday today
+                    {people.length !== 0
+                        ? `${people.length} of your contacts have a birthday today`
+                        : 'You have wished "Happy Birthday" to all contacts.'}
                 </h4>
                 <List people={people} />
                 <div className='btn-div'>
