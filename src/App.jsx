@@ -10,9 +10,13 @@ export default function App() {
     return (
         <main>
             <section className='container'>
-                <h3 style={{ marginBottom: '2rem', marginTop: '.5rem' }}>
-                    {people.length} birthdays today
-                </h3>
+                <h1>The Birthday Buddy</h1>
+                <h4
+                    className='num-friends'
+                    style={{ marginBottom: '2rem', marginTop: '.5rem' }}
+                >
+                    {people.length} of your contacts have a birthday today
+                </h4>
                 <List people={people} />
                 <div className='btn-div'>
                     {people.length !== 0 ? (

@@ -341,3 +341,17 @@ main {
     opacity: 0;
     pointer-events: none;
 }
+
+section.container h1 {
+    text-transform: uppercase;
+    font-size: 30px;
+    color: var(--primary-900);
+    display: block;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+section.container h4.num-friends {
+    text-transform: none;
+    text-align: center;
+    font-size: 22px;
+}
